@@ -1,0 +1,18 @@
+name: AwsCloudDeployment
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:        
+        aws-access-key-id: ${{ secrets.ACCESSKEYID }}
+        aws-secret-access-key: ${{ secrets.AWSSECRETKEY }}        
+        aws-region:  ${{ secrets.AWS_REGIONS }}   
+    - name: Deploy CloudFormation Stack
+      uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3         
+      with:
+        name: Stack
+        template: stack.yml
