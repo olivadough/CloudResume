@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  Name:
+    Type: String
+    Description: Name of the app
+  
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: cloud-resume-challenge-oliver
