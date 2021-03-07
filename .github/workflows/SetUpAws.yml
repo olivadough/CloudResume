@@ -15,4 +15,4 @@ jobs:
       uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3         
       with:
         name: Stack
-        template: stack.yml
+        template: stack.yaml
