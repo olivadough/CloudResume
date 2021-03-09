@@ -16,4 +16,4 @@ jobs:
       with:
         name: Stack
         template: stack.yaml
-        parameter-overrides: "MyParam1=myValue,MyParam2=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        parameter-overrides: "Name=Cloud_Resume_Front_End"
