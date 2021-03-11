@@ -17,12 +17,3 @@ Resources:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
       Bucket: cloud-resume-challenge-oliver
-      PolicyDocument:
-        Id: MyPolicy
-        Version: 2012-10-17
-        Statement:
-        - Sid: PublicReadForGetBucketObjects
-          Effect: Allow
-          Principal: "*"
-          Action: "s3:GetObject"
-          Resource: !Sub "arn:aws:s3:::${S3Bucket}/*
