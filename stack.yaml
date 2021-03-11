@@ -25,4 +25,4 @@ Resources:
             Effect: Allow
             Principal: "*"
             Action: "s3:GetObject"
-            Resource: !Sub "arn:aws:s3:::${S3Hosting}/*"
+            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
