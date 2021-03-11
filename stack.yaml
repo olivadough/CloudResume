@@ -13,3 +13,20 @@ Resources:
       WebsiteConfiguration:
         ErrorDocument: 404.html
         IndexDocument: index.html
+   S3HostingBucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: cloud-resume-challenge-oliver
+      PolicyDocument:
+        Id: MyPolicy
+        Version: 2012-10-17
+        Statement:
+          # The Sid is an arbitrary value
+          - Sid: PublicReadForGetBucketObjects
+            # Public access so fetching an object is allowed for everything
+            Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            # This policy is limited to the bucket defined in this stack, hey,
+            # it is not open-bar!
+            Resource: arn:aws:s3:::bw-hosting-basic/*
