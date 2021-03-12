@@ -14,10 +14,10 @@ Resources:
         ErrorDocument: 404.html
         IndexDocument: index.html
         PublicAccessBlockConfiguration:
-          BlockPublicAcls: TRUE
-          BlockPublicPolicy: TRUE
-          IgnorePublicAcls: TRUE
-          RestrictPublicBuckets: TRUE
+          BlockPublicAcls: FALSE
+          BlockPublicPolicy: FALSE
+          IgnorePublicAcls: FALSE
+          RestrictPublicBuckets: FALSE
   S3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
