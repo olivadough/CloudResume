@@ -18,8 +18,8 @@ Resources:
           BlockPublicPolicy: FALSE
           IgnorePublicAcls: FALSE
           RestrictPublicBuckets: FALSE
-   S3HostingBucketPolicy:
-    Type: AWS::S3::BucketPolicy
+  S3HostingBucketPolicy:
+   Type: AWS::S3::BucketPolicy
     Properties:
       Bucket: cloud-resume-challenge-oliver
       PolicyDocument:
