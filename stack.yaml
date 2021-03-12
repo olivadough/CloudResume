@@ -20,7 +20,7 @@ Resources:
           RestrictPublicBuckets: FALSE
   S3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
-    Properties:
+   Properties:
       Bucket: cloud-resume-challenge-oliver
       PolicyDocument:
         Id: MyPolicy
