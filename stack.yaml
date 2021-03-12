@@ -14,10 +14,7 @@ Resources:
         ErrorDocument: 404.html
         IndexDocument: index.html
       PublicAccessBlockConfiguration:
-        BlockPublicAcls: FALSE
         BlockPublicPolicy: FALSE
-        IgnorePublicAcls: FALSE
-        RestrictPublicBuckets: FALSE
   S3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
