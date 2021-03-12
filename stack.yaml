@@ -17,8 +17,7 @@ Resources:
           BlockPublicAcls: FALSE
           BlockPublicPolicy: FALSE
           IgnorePublicAcls: FALSE
-          RestrictPublicBuckets: FALSE 
-
+          RestrictPublicBuckets: FALSE
   S3HostingBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
