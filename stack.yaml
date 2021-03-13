@@ -31,7 +31,7 @@ Resources:
   DomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
-    HostedZoneName: cloud-resume-challenge-oliver.com
+    HostedZoneId: Z05331763E8JY263AVOS6
     Name: cloud-resume-challenge-oliver.com
     Type: A
     Region: !Ref AWS::Region
@@ -62,5 +62,5 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
-            
+
  
