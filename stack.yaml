@@ -62,4 +62,5 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
+            
  
