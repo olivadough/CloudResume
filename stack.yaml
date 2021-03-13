@@ -6,19 +6,19 @@ Parameters:
     Description: Name of the app
   
 Resources:
-  S3Bucket:
+  DomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: cloud-resume-challenge-oliver
+      BucketName: cloud-resume-challenge-oliver.com
       WebsiteConfiguration:
         ErrorDocument: 404.html
         IndexDocument: index.html
       PublicAccessBlockConfiguration:
         BlockPublicPolicy: FALSE
-  S3HostingBucketPolicy:
+  DomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
-      Bucket: cloud-resume-challenge-oliver
+      Bucket: cloud-resume-challenge-oliver.com
       PolicyDocument:
         Id: MyPolicy
         Version: 2012-10-17
@@ -27,4 +27,26 @@ Resources:
             Effect: Allow
             Principal: "*"
             Action: "s3:GetObject"
-            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
+            Resource: !Sub "arn:aws:s3:::${DomainS3Bucket}/*"
+  SubDomainS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: www.cloud-resume-challenge-oliver.com
+      WebsiteConfiguration:
+        ErrorDocument: 404.html
+        IndexDocument: index.html
+      PublicAccessBlockConfiguration:
+        BlockPublicPolicy: FALSE
+  SubDomainS3HostingBucketPolicy:
+   Type: AWS::S3::BucketPolicy
+   Properties:
+      Bucket: www.cloud-resume-challenge-oliver.com
+      PolicyDocument:
+        Id: MyPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: "*"
+            Action: "s3:GetObject"
+            Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
