@@ -34,11 +34,9 @@ Resources:
     HostedZoneId: Z05331763E8JY263AVOS6
     Name: cloud-resume-challenge-oliver.com
     Type: A
-    Region: !Ref AWS::Region
-    TTL: 300
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
-     HostedZoneId: Z05331763E8JY263AVOS6
+     HostedZoneId: Z3BJ6K6RIION7M
 
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
