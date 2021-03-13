@@ -61,5 +61,14 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
+  SubDomainRecordSet:
+   Type: AWS::Route53::RecordSet
+   Properties:
+    HostedZoneId: Z05331763E8JY263AVOS6
+    Name: www.
+    Type: A
+    AliasTarget:
+     DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
+     HostedZoneId: Z3BJ6K6RIION7M
 
  
