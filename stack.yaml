@@ -18,7 +18,7 @@ Resources:
   DomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
-      Bucket: cloud-resume-challenge-oliver.com
+      Bucket: ${DomainS3Bucket}
       PolicyDocument:
         Id: MyPolicy
         Version: 2012-10-17
@@ -31,16 +31,17 @@ Resources:
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: www.cloud-resume-challenge-oliver.com
+      BucketName: !Sub "www.${DomainS3Bucket}"
       WebsiteConfiguration:
-        ErrorDocument: 404.html
-        IndexDocument: index.html
+        RedirectAllRequestsTo:
+          HostName: ${DomainS3Bucket}
+          Protocol: http
       PublicAccessBlockConfiguration:
         BlockPublicPolicy: FALSE
   SubDomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
-      Bucket: www.cloud-resume-challenge-oliver.com
+      Bucket: !Sub "www.${DomainS3Bucket}"
       PolicyDocument:
         Id: MyPolicy
         Version: 2012-10-17
