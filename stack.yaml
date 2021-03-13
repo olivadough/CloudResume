@@ -18,7 +18,7 @@ Resources:
   DomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
-      Bucket: ${DomainS3Bucket}
+      Bucket: !Ref DomainS3Bucket
       PolicyDocument:
         Id: MyPolicy
         Version: 2012-10-17
@@ -34,14 +34,14 @@ Resources:
       BucketName: !Sub "www.${DomainS3Bucket}"
       WebsiteConfiguration:
         RedirectAllRequestsTo:
-          HostName: ${DomainS3Bucket}
+          HostName: !Ref DomainS3Bucket
           Protocol: http
       PublicAccessBlockConfiguration:
         BlockPublicPolicy: FALSE
   SubDomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
-      Bucket: !Sub "www.${DomainS3Bucket}"
+      Bucket: !Ref SubDomainS3Bucket
       PolicyDocument:
         Id: MyPolicy
         Version: 2012-10-17
