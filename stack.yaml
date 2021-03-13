@@ -70,5 +70,6 @@ Resources:
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
+    
 
  
