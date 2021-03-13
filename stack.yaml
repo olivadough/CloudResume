@@ -28,18 +28,17 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: !Sub "arn:aws:s3:::${DomainS3Bucket}/*"
-  Route53DomainS3Bucket:
+  DomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
     HostedZoneName: cloud-resume-challenge-oliver.com
     Name: cloud-resume-challenge-oliver.com
     Type: A
-    Region: us-west-2
-    ResourceRecords: A
-    HealthCheckId: No
+    Region: !Ref AWS::Region
     AliasTarget:
-     DNSName : cloud-resume-challenge-oliver.com
-     HostedZoneId" : s3-website-us-west-2.amazonaws.com (cloud-resume-challenge-oliver.com)
+     DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
+     HostedZoneId: Z05331763E8JY263AVOS6
+
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
@@ -63,14 +62,4 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
-  Route53S3SubDomainS3Bucket:
-   Type: AWS::Route53::RecordSet
-   Properties:
-    Name: www.
-    Type: A
-    Region: us-west-2
-    ResourceRecords: A
-    HealthCheckId: No
-    AliasTarget:
-     DNSName : cloud-resume-challenge-oliver.com
-     HostedZoneId" : s3-website-us-west-2.amazonaws.com (cloud-resume-challenge-oliver.com)
+ 
