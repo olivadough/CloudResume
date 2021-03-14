@@ -45,8 +45,6 @@ Resources:
         RedirectAllRequestsTo:
           HostName: !Ref DomainS3Bucket
           Protocol: http
-      PublicAccessBlockConfiguration:
-        BlockPublicPolicy: FALSE
   SubDomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
