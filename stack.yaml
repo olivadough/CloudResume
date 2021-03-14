@@ -32,7 +32,7 @@ Resources:
    Type: AWS::Route53::RecordSet
    Properties:
     HostedZoneId: Z05331763E8JY263AVOS6
-    Name: cloud-resume-challenge-oliver.com
+    Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
@@ -65,7 +65,7 @@ Resources:
    Type: AWS::Route53::RecordSet
    Properties:
     HostedZoneId: Z05331763E8JY263AVOS6
-    Name: www
+    Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
