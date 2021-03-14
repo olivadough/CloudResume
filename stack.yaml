@@ -37,7 +37,6 @@ Resources:
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
-
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
@@ -48,19 +47,6 @@ Resources:
           Protocol: http
       PublicAccessBlockConfiguration:
         BlockPublicPolicy: FALSE
-  SubDomainS3HostingBucketPolicy:
-   Type: AWS::S3::BucketPolicy
-   Properties:
-      Bucket: !Ref SubDomainS3Bucket
-      PolicyDocument:
-        Id: MyPolicy
-        Version: 2012-10-17
-        Statement:
-          - Sid: PublicReadForGetBucketObjects
-            Effect: Allow
-            Principal: "*"
-            Action: "s3:GetObject"
-            Resource: !Sub "arn:aws:s3:::${SubDomainS3Bucket}/*"
   SubDomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
