@@ -37,6 +37,7 @@ Resources:
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
+  
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
@@ -55,7 +56,6 @@ Resources:
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
-  AWSTemplateFormatVersion: '2010-09-09'
 
   myDNS:
   Type: 'AWS::Route53::RecordSetGroup'
@@ -70,8 +70,8 @@ Resources:
             - !Ref Domains3Bucket
 
   myDistribution:
-    Type: 'AWS::CloudFront::Distribution'
-    Properties:
+   Type: 'AWS::CloudFront::Distribution'
+   Properties:
       DistributionConfig:
         Origins:
         - DomainName: !Ref Domains3Bucket
