@@ -66,9 +66,11 @@ Resources:
       - !Ref SubDomainS3Bucket
      Origin:
       DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
-      Id: myS3Origin
-      S3OriginConfig:
-        OriginAccessIdentity: origin-access-identity/cloudfront/E127EXAMPLE51Z
+      Id: CustomIdForNow
+      CustomOriginConfig:
+        OriginProtocolPolicy: match-viewer
+        OriginSSLProtocols:
+    
      Enabled: 'true'
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
