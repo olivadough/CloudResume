@@ -73,9 +73,9 @@ Resources:
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
      Logging:
-      Bucket: !Ref DomainS3Bucket
+       Bucket: !Ref DomainS3Bucket
      ViewerCertificate:
-      CloudFrontDefaultCertificate: 'true
+       CloudFrontDefaultCertificate: 'true
 
     
 
