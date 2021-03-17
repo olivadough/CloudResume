@@ -65,7 +65,7 @@ Resources:
       - !Ref DomainS3Bucket
       - !Ref SubDomainS3Bucket
      Origins:
-      - DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
+      DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
       Id: CustomIdForNow
       CustomOriginConfig:
         OriginProtocolPolicy: match-viewer
