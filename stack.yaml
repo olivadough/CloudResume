@@ -45,6 +45,7 @@ Resources:
         RedirectAllRequestsTo:
           HostName: !Ref DomainS3Bucket
           Protocol: http
+
   SubDomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
@@ -54,6 +55,65 @@ Resources:
     AliasTarget:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
+  AWSTemplateFormatVersion: '2010-09-09'
+
+  myDNS:
+  Type: 'AWS::Route53::RecordSetGroup'
+  Properties:
+    HostedZoneId: !Ref Z05331763E8JY263AVOS6
+    RecordSets:
+      - Name: !Ref DomainS3Bucket
+        Type: A
+        AliasTarget:
+          HostedZoneId: Z2FDTNDATAQYW2
+          DNSName: !GetAtt 
+            - !Ref Domains3Bucket
+
+  myDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: !Ref Domains3Bucket
+          Id: myCustomOrigin
+          CustomOriginConfig:
+            HTTPPort: '80'
+            HTTPSPort: '443'
+            OriginProtocolPolicy: http-only
+        Enabled: 'true'
+        DefaultRootObject: index.html
+        Logging:
+          Bucket: !Ref Domains3Bucket
+        Aliases:
+        - mysite.example.com
+        - "*.yoursite.example.com"
+        DefaultCacheBehavior:
+          TargetOriginId: myCustomOrigin
+          SmoothStreaming: 'false'
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: all
+          TrustedSigners:
+          - 1234567890EX
+          - 1234567891EX
+          ViewerProtocolPolicy: allow-all
+        CustomErrorResponses:
+        - ErrorCode: '404'
+          ResponsePagePath: "/error-pages/404.html"
+          ResponseCode: '200'
+          ErrorCachingMinTTL: '30'
+        PriceClass: PriceClass_200
+        Restrictions:
+          GeoRestriction:
+            RestrictionType: whitelist
+            Locations:
+            - AQ
+            - CV
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: 'true'
+
     
+
 
  
