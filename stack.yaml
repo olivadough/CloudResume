@@ -64,7 +64,7 @@ Resources:
      Aliases:
       - !Ref DomainS3Bucket
       - !Ref SubDomainS3Bucket
-     Origins:
+     Origin:
       - DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
       Id: myS3Origin
       S3OriginConfig:
