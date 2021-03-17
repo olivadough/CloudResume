@@ -69,7 +69,6 @@ Resources:
       Id: CustomIdForNow
       CustomOriginConfig:
         OriginProtocolPolicy: match-viewer
-        OriginSSLProtocols:
     
      Enabled: 'true'
      DefaultRootObject: index.html
