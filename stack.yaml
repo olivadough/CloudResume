@@ -57,61 +57,25 @@ Resources:
      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
      HostedZoneId: Z3BJ6K6RIION7M
 
-  myDNS:
-  Type: 'AWS::Route53::RecordSetGroup'
-  Properties:
-    HostedZoneId: !Ref Z05331763E8JY263AVOS6
-    RecordSets:
-      - Name: !Ref DomainS3Bucket
-        Type: A
-        AliasTarget:
-          HostedZoneId: Z2FDTNDATAQYW2
-          DNSName: !GetAtt 
-            - !Ref Domains3Bucket
-
   myDistribution:
-   Type: 'AWS::CloudFront::Distribution'
+   Type: AWS::CloudFront::Distribution
    Properties:
-      DistributionConfig:
-        Origins:
-        - DomainName: !Ref Domains3Bucket
-          Id: myCustomOrigin
-          CustomOriginConfig:
-            HTTPPort: '80'
-            HTTPSPort: '443'
-            OriginProtocolPolicy: http-only
-        Enabled: 'true'
-        DefaultRootObject: index.html
-        Logging:
-          Bucket: !Ref Domains3Bucket
-        Aliases:
-        - mysite.example.com
-        - "*.yoursite.example.com"
-        DefaultCacheBehavior:
-          TargetOriginId: myCustomOrigin
-          SmoothStreaming: 'false'
-          ForwardedValues:
-            QueryString: 'false'
-            Cookies:
-              Forward: all
-          TrustedSigners:
-          - 1234567890EX
-          - 1234567891EX
-          ViewerProtocolPolicy: allow-all
-        CustomErrorResponses:
-        - ErrorCode: '404'
-          ResponsePagePath: "/error-pages/404.html"
-          ResponseCode: '200'
-          ErrorCachingMinTTL: '30'
-        PriceClass: PriceClass_200
-        Restrictions:
-          GeoRestriction:
-            RestrictionType: whitelist
-            Locations:
-            - AQ
-            - CV
-        ViewerCertificate:
-          CloudFrontDefaultCertificate: 'true'
+    DistributionConfig:
+     Aliases:
+      - !Ref DomainS3Bucket
+      - !Ref SubDomainS3Bucket
+     Origins:
+      - DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
+      Id: myS3Origin
+      S3OriginConfig:
+        OriginAccessIdentity: origin-access-identity/cloudfront/E127EXAMPLE51Z
+     Enabled: 'true'
+     DefaultRootObject: index.html
+     PriceClass: PriceClass_All
+     Logging:
+      Bucket: !Ref DomainS3Bucket
+     ViewerCertificate:
+      CloudFrontDefaultCertificate: 'true
 
     
 
