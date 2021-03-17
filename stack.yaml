@@ -65,7 +65,7 @@ Resources:
       - !Ref DomainS3Bucket
       - !Ref SubDomainS3Bucket
      Origins:
-      DomainName: !Sub ${DomainS3Bucket}.s3.amazonaws.com
+      DomainName: !Ref DomainS3Bucket
       Id: CustomIdForNow
       CustomOriginConfig:
         OriginProtocolPolicy: match-viewer
@@ -73,7 +73,7 @@ Resources:
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
      Logging:
-       Bucket: !Sub ${DomainS3Bucket}.s3.amazonaws.com
+       Bucket: !Ref DomainS3Bucket
      ViewerCertificate:
        CloudFrontDefaultCertificate: 'true'
 
