@@ -77,6 +77,5 @@ Resources:
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
-       ForwardedValues:
-         CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
         
