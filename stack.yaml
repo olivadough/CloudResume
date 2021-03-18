@@ -76,3 +76,6 @@ Resources:
        Bucket: !Ref DomainS3Bucket
      ViewerCertificate:
        CloudFrontDefaultCertificate: 'true' 
+     DefaultCacheBehavior:
+       TargetOriginId: Z05331763E8JY263AVOS6
+       ViewerProtocolPolicy: allow-all
