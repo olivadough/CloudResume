@@ -75,4 +75,4 @@ Resources:
      Logging:
        Bucket: !Ref DomainS3Bucket
      ViewerCertificate:
-       CloudFrontDefaultCertificate: 'true'
+       CloudFrontDefaultCertificate: 'true' 
