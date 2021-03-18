@@ -73,7 +73,7 @@ Resources:
      DefaultRootObject: Index.html
      PriceClass: PriceClass_All
      ViewerCertificate:
-       CloudFrontDefaultCertificate: 'true' 
+       CloudFrontDefaultCertificate: 'false'
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
