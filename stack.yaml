@@ -72,10 +72,11 @@ Resources:
      Enabled: 'true'
      DefaultRootObject: Index.html
      PriceClass: PriceClass_All
-     Logging:
-       Bucket: !Sub ${DomainS3Bucket}.s3.amazonaws.com
      ViewerCertificate:
        CloudFrontDefaultCertificate: 'true' 
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
+       ForwardedValues:
+         CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+        
