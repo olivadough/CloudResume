@@ -73,7 +73,7 @@ Resources:
      DefaultRootObject: Index.html
      PriceClass: PriceClass_All
      Logging:
-       Bucket: !Ref DomainS3Bucket
+       Bucket: !Sub ${DomainS3Bucket}.s3.amazonaws.com
      ViewerCertificate:
        CloudFrontDefaultCertificate: 'true' 
      DefaultCacheBehavior:
