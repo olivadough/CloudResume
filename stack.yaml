@@ -65,10 +65,10 @@ Resources:
       - !Ref DomainS3Bucket
       - !Ref SubDomainS3Bucket
      Origins:
-       DomainName: !Ref DomainS3Bucket
-       Id: Z05331763E8JY263AVOS6
-       CustomOriginConfig:
-         OriginProtocolPolicy: match-viewer
+       - DomainName: !Ref DomainS3Bucket
+         Id: Z05331763E8JY263AVOS6
+         CustomOriginConfig:
+           OriginProtocolPolicy: match-viewer
      Enabled: 'true'
      DefaultRootObject: Index.html
      PriceClass: PriceClass_All
