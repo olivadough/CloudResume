@@ -64,7 +64,7 @@ Resources:
      Aliases:
       - !Ref DomainS3Bucket
       - !Ref SubDomainS3Bucket
-     Origin:
+     Origins:
       DomainName: !Ref DomainS3Bucket
       Id: Z05331763E8JY263AVOS6
       CustomOriginConfig:
