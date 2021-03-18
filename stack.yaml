@@ -74,7 +74,7 @@ Resources:
      PriceClass: PriceClass_All
      ViewerCertificate:
        CloudFrontDefaultCertificate: 'false'
-       MinimumProtocolVersion: static-ip
+       MinimumProtocolVersion: TLSv1
 
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
