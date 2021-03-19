@@ -86,6 +86,7 @@ Resources:
       - !Ref SubDomainS3Bucket
      CertificateTransparencyLoggingPreference: DISABLED
 
+  Transform: AWS::Serverless-2016-10-31
   ApiGatewayApi:
     Type: AWS::Serverless::Api
     Properties:
