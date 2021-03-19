@@ -3,8 +3,7 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Name:
     Type: String
-    Description: Name of the app
-  
+    Description: Name of the appp
 Resources:
   DomainS3Bucket:
     Type: 'AWS::S3::Bucket'
