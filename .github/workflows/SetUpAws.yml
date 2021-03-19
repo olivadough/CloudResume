@@ -17,5 +17,3 @@ jobs:
         name: Stack
         template: stack.yaml
         parameter-overrides: "Name=Cloud_Resume_Front_End"
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./public/ cloud-resume-challenge-oliver.com --delete
