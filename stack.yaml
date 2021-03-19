@@ -74,7 +74,7 @@ Resources:
        CloudFrontDefaultCertificate: 'false'
        AcmCertificateArn: !Ref MyCertificate
        MinimumProtocolVersion: TLSv1
-       SSLSupportMethod: sni-only
+       SslSupportMethod: sni-only
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
