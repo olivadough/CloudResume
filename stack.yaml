@@ -59,6 +59,9 @@ Resources:
    Type: AWS::CloudFront::Distribution
    Properties:
     DistributionConfig:
+     Alias:
+       - !Ref DomainS3Bucket
+       - !Sub "www.${DomainS3Bucket}"
      Origins:
        - DomainName: !Ref DomainS3Bucket
          Id: Z05331763E8JY263AVOS6
@@ -68,7 +71,10 @@ Resources:
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
      ViewerCertificate:
-       CloudFrontDefaultCertificate: 'true'
+       CloudFrontDefaultCertificate: 'false'
+       AcmCertificateArn: !Ref MyCertificate
+       MinimumProtocolVersion: TLSv1
+       SSLSupportMethod: sni-only
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
