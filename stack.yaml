@@ -82,5 +82,5 @@ Resources:
        - DomainName: !Ref DomainS3Bucket
          HostedZoneId: Z05331763E8JY263AVOS6
      ValidationMethod: DNS
-     CertificateTransparencyLoggingPreference: DISABLED
+     CertificateTransparencyLoggingPreference: DISABLED 
         
