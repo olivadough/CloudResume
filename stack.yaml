@@ -1,6 +1,10 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Resources:
+  RandomS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: random234235jnsdfs80s83
   DomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
