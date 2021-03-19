@@ -59,7 +59,7 @@ Resources:
    Type: AWS::CloudFront::Distribution
    Properties:
     DistributionConfig:
-     Alias:
+     Aliases:
        - !Ref DomainS3Bucket
        - !Sub "www.${DomainS3Bucket}"
      Origins:
