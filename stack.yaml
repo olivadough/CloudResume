@@ -86,7 +86,7 @@ Resources:
      DomainValidationOptions:
       - DomainName: !Ref DomainS3Bucket
         HostedZoneId: Z05331763E8JY263AVOS6
-      - DomainName: !Ref SubDomaininS3Bucket
+      - DomainName: !Ref SubDomainS3Bucket
         HostedZoneId: Z05331763E8JY263AVOS6
      ValidationMethod: DNS
      SubjectAlternativeNames:
