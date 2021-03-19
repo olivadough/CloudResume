@@ -54,7 +54,6 @@ Resources:
     AliasTarget:
       DNSName: !GetAtt CloudDistribution.DomainName
       HostedZoneId: Z2FDTNDATAQYW2
-
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
    Properties:
