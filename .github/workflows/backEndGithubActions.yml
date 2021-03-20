@@ -12,7 +12,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1 
     - name: Install SAM CLI
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         run: wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
         run: unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
