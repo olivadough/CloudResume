@@ -8,7 +8,7 @@ jobs:
     - run: 
     - name: Install SAM CLI
       with:
-        wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-        unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-        sudo ./sam-installation/install
-        sam --version
+        run: wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+        run: unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+        run: sudo ./sam-installation/install
+        run: sam --version
