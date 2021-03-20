@@ -9,6 +9,7 @@ Resources:
   Lambda:
     Type: AWS::Serverless::Function
     Properties:
+      Handler: index.handler
       FunctionName: Lambda Function
       Events:
         ApiEvent:
