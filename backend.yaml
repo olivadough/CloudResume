@@ -2,9 +2,9 @@ Transform: AWS::Serverless-2016-10-31
 
 Resources:
  ApiGatewayApi:
-  Type: AWS::Serverless::Api
-  Properties:
-    StageName: prod
+   Type: AWS::Serverless::Api
+   Properties:
+     StageName: prod
 
   Lambda:
     Type: AWS::Serverless::Function
