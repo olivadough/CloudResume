@@ -9,7 +9,6 @@ Resources:
   Lambda:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: Lambda Function
       Events:
         ApiEvent:
           Type: Api
