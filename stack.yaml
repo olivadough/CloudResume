@@ -72,11 +72,7 @@ Resources:
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
-       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
-     CustomErrorResponse:
-       ErrorCode: 403
-       ResponseCoude: 200
-       ResponsePagePath: /index.html
+       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6ß
   MyCertificate:
    Type: AWS::CertificateManager::Certificate
    Properties:
