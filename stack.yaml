@@ -9,7 +9,7 @@ Resources:
         ErrorDocument: 404.html
         IndexDocument: index.html
       PublicAccessBlockConfiguration:
-        BlockPublicPolicy: FALSE
+        BlockPublicPolicy: FALSE 
   DomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
