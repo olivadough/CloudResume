@@ -61,7 +61,6 @@ Resources:
          Id: Z05331763E8JY263AVOS6
          CustomOriginConfig:
            OriginProtocolPolicy: https-only
-           OriginKeepaliveTimeout: 3
      Enabled: 'true'
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
