@@ -9,7 +9,7 @@ Resources:
         ErrorDocument: 404.html
         IndexDocument: index.html
       PublicAccessBlockConfiguration:
-        BlockPublicPolicy: FALSE 
+        BlockPublicPolicy: FALSE
   DomainS3HostingBucketPolicy:
    Type: AWS::S3::BucketPolicy
    Properties:
@@ -60,7 +60,7 @@ Resources:
        - DomainName: !Ref DomainS3Bucket
          Id: Z05331763E8JY263AVOS6
          CustomOriginConfig:
-           OriginProtocolPolicy: https-only
+           OriginProtocolPolicy: match-viewer
      Enabled: 'true'
      DefaultRootObject: index.html
      PriceClass: PriceClass_All
@@ -71,7 +71,7 @@ Resources:
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
        ViewerProtocolPolicy: allow-all
-       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6ß
+       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
   MyCertificate:
    Type: AWS::CertificateManager::Certificate
    Properties:
@@ -84,5 +84,5 @@ Resources:
      ValidationMethod: DNS
      SubjectAlternativeNames:
       - !Ref SubDomainS3Bucket
-     CertificateTransparencyLoggingPreference: DISABLED
+     CertificateTransparencyLoggingPreference: DISABLED 
         
