@@ -1,9 +1,258 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html>
 <head>
-    <title>My Website Home Page</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="dep/Font-Awesome-master/web-fonts-with-css/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" type="text/css" href="dep/style.css" />
 </head>
-<body>
-  <h1>Welcome to my website</h1>
-  <p>Now hosted on Amazon S3!</p>
+<body lang="en">
+  <section id="main">
+    <header id="title">
+      <h1>Oliver Do</h1>
+      <span class="subtitle"> Software Engineer Hopeful</span>
+    </header>
+    <section class="main-block">
+      <h2>
+        <i class="fa fa-folder-open"></i> Projects
+      </h2>
+      <section class="blocks">
+        <div class="date"></div>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>AWS Cloud Project</h3>
+            <span class="place">Created a resume project hosted on a AWS cloud platform</span>
+          </header>
+          <div>
+            <ul>
+              <li>Incorporated a Ci/Cd pipeline through Github Actions to continuously automate and deploy the project, while using Github as the repository for my code</li>
+              <li>Applied ifC procedures through Cloudformation and used the security in IAM to mitigate the possibilities of data breach</li>
+              <li>Set up a Static S3 Bucket to hold static files for the application including html files</li>
+              <li>Procured a hostname and set up a DNS through route 53 that would link users to my website and configured the bucket policies to allow users access.</li>
+              <li>Set up a CDN through CloudFront in order to cache the static files in order to accelerate the user's connection with the website.</li>
+              <li>Set up a certificateManager that would add another layer of security through https.</li>
+              <li>Created a Lambda that adds to the DynamoDb database with every visitor to the website</li>
+              <li>Created a javascript that invokes an Api call that would return the visitor count for display along with the resume </li>
+          </ul> 
+          </div>
+        </div>
+      </section>
+
+      <section class="blocks">
+        <div class="date">
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Community Manager</h3>
+            <span class="place">Built a communications platform in the form of a community forum:</span>
+          </header>
+          <div>
+            <ul>
+              <li>Allowed users to sign-up, comment, post, delete, and live chat through JavaScript
+              <li>Stored comments, posts, and user identifications through MySql</li>
+              <li>Relayed information to front-end to back-end through Express</li>
+              <li>Front-end aesthetics were built with Bootstrap and CSS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Food Optimization Project</h3>
+            <span class="place">Built a food service matching clientele with restaurants to utilize food waste by selling excess food stock at a discounted price</span>
+          </header>
+          <div>
+            <ul>
+              <ul>
+                <li>Used React cookie routers and NPM packages to link the front-end and back-end to improve user experience</li>
+            </ul> 
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="main-block">
+      <h2>
+        <i class="fa fa-globe"></i> Skills
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span></span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>AWS </h3>
+          </header>
+          <div>
+            <ul>
+              <li>Route53, DynamoDb, Api Gateway, Lambda, s3, SAM</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span></span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>General </h3>
+          </header>
+          <div>
+            <ul>
+              <li>Javascript, Node.js, CSS, HTML, MongoDb, MySql, Npm, Sql, Bootstrap, JQuery, JSON, Api, Ajax, Express, MySql, Sequelize, Mongoose, Mern Stack, MVC, Heroku, React, https, ifC, boto3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="main-block concise">
+      <h2>
+        <i class="fa fa-graduation-cap"></i> Education
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span>2018</span><span>2019</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Associates in Computer Science</h3>
+            <span class="place">Irvine Valley College</span>
+            <span class="location">Irvine, California</span>
+          </header>
+          <div>Courses included: Python, Visual Basic Programming, Database Management, Data Structures & Algorithms, Assembly Language, C#, Asp.Net, C++, Java, HTML/XHTML</div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>2017</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Coding Bootcamp</h3>
+            <span class="place">University of California Irvine, Irvine Division of Continuing Education    </span>
+            <span class="location">Irvine, California</span>
+          </header>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>2011</span><span>2016</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Bachelor of Science in Business Administration and Human Resources</h3>
+            <span class="place">California State University, Long Beach</span>
+            <span class="location">Long Beach, California</span>
+          </header>
+          <div>President’s and Dean’s Honor List</div>
+        </div>
+      </section>
+    </section>
+
+    <section class="main-block">
+      <h2>
+        <i class="fa fa-suitcase"></i> Experiences
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span>2017</span><span>2018</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Coding Assistant Position</h3>
+            <span class="place">UCI</span>
+            <span class="location">Irvine, California</span>
+          </header>
+          <div>
+            <ul>
+              <li>Tutored classes of 30-90 students in learning existing technologies and building web applications, by breaking down topics into digestible concepts</li>
+              <li>Taught students how to incorporate technologies into their projects, i.e. understanding the concept of Mern Stack and OOP, through live demos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>2012</span><span>2016</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Personal Trainer</h3>
+            <span class="place">Freelance Personal Trainer</span>
+            <span class="location">Irvine, California</span>
+          </header>
+        </div>
+      </section>
+    </section>
+  </section>
+  <aside id="sidebar">
+    <div class="side-block" id="contact">
+      <h1>
+        Contact Info
+      </h1>
+      <ul>
+        <li ><i class="fas fa-envelope"></i><a href="mailto: oliver9324@gmail.com"> oliver9324@gmail.com</a></li>
+        <li ><i class="fas fa-phone"></i><a href="tel:1714 588 9241"> 1 714 588 9241</a></li>
+        <li ><i class="fas fa-globe"></i><a href="https://www.cloud-resume-challenge-oliver.com/" target="_blank"> www.cloud-resume-challenge-oliver.com</a></li>
+        <li ><i class="fab fa-linkedin-in"></i><a href="linkedin.com/in/oliver9324" target="_blank"> linkedin.com/in/oliver9324</a></li>
+        <li ><i class="fab fa-github"></i><a href="https://github.com/olivadough" target="_blank"> https://github.com/olivadough</a></li>
+
+      </ul>
+    </div>
+    <div class="side-block" id="skills">
+      <h1>
+        You are visitor:
+      </h1>
+      <ul>
+        <li>AWS</li>
+        Javascript
+        , 
+        Node.js, 
+        CSS, 
+        HTML, 
+        MongoDb, 
+        MySql, 
+        Npm, 
+        Sql, 
+        Bootstrap, 
+        JQuery, 
+        JSON, 
+        Api,
+         Ajax, 
+         Express, 
+         MySql, 
+         Sequelize, 
+         Mongoose, 
+         Mern Stack, MVC, Heroku, React, https, ifC, boto3
+        <li> General </li>
+      </ul>
+    </div>
+  </aside>
 </body>
 </html>
