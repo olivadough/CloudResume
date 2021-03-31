@@ -9,7 +9,7 @@ Resources:
       CorsConfiguration:
         CorsRules:
           - AllowedHeaders:
-              - '*'
+              - Authorization
             AllowedMethods:
               - GET
               - HEAD
