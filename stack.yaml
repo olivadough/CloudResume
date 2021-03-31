@@ -94,5 +94,5 @@ Resources:
      ValidationMethod: DNS
      SubjectAlternativeNames:
       - !Ref SubDomainS3Bucket
-     CertificateTransparencyLoggingPreference: DISABLED 
+     CertificateTransparencyLoggingPreference: DISABLED  
         
