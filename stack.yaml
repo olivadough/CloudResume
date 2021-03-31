@@ -10,6 +10,7 @@ Resources:
         CorsRules:
           - AllowedHeaders:
               - '*'
+              - 'https://bmlrgxi0q2.execute-api.us-east-1.amazonaws.com/prod'
             AllowedMethods:
               - GET
             AllowedOrigins:
