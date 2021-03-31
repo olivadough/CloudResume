@@ -9,8 +9,8 @@ Resources:
         CorsRules:
           - AllowedMethods: 
             - GET
-          - AllowedOrigins: 
-            - https://bmlrgxi0q2.execute-api.us-east-1.amazonaws.com/prod
+          - AllowedOrigins:
+            - 'https://bmlrgxi0q2.execute-api.us-east-1.amazonaws.com/prod'
       WebsiteConfiguration:
         ErrorDocument: 404.html
         IndexDocument: index.html
