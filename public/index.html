@@ -229,28 +229,24 @@
       <h1>
         You are visitor:
       </h1>
+      <div class ="entries"></div>
+      <script type="text/javascript">
+        var API_URL = "https://bmlrgxi0q2.execute-api.us-east-1.amazonaws.com/prod"
+        $(document).ready(function(){
+            $.ajax({
+
+                url: API_URL,
+                type: 'GET',
+                dataType: 'json',
+
+                success: function(data){
+                    $('#entries').append('<p>' + data + '</p>');
+                    alert(data);
+                }
+            });
+        });
+      </script>
       <ul>
-        <li>AWS</li>
-        Javascript
-        , 
-        Node.js, 
-        CSS, 
-        HTML, 
-        MongoDb, 
-        MySql, 
-        Npm, 
-        Sql, 
-        Bootstrap, 
-        JQuery, 
-        JSON, 
-        Api,
-         Ajax, 
-         Express, 
-         MySql, 
-         Sequelize, 
-         Mongoose, 
-         Mern Stack, MVC, Heroku, React, https, ifC, boto3
-        <li> General </li>
       </ul>
     </div>
   </aside>
