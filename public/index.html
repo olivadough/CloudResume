@@ -242,12 +242,10 @@
 
                 url: API_URL,
                 type: 'GET',
-                crossDomain: true,
                 dataType: 'json',
 
                 success: function(data){
                     $('#entries').append('<p>' + data + '</p>');
-                    alert(data);
                 }
             });
         });
