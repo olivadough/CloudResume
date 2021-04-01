@@ -232,18 +232,14 @@
       <h1>
         You are visitor:
       </h1>
-      <div id ="entries">
-        <p> number should be under here</p>
-      </div>
+      <div id ="entries"></div>
       <script type="text/javascript">
         var API_URL = "https://bmlrgxi0q2.execute-api.us-east-1.amazonaws.com/prod/";
         $(entries).ready(function(){
             $.ajax({
-
                 url: API_URL,
                 type: 'GET',
                 dataType: 'json',
-
                 success: function(data){
                     $('#entries').append('<p>' + data + '</p>');
                 }
