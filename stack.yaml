@@ -32,7 +32,7 @@ Resources:
     Type: A
     AliasTarget:
       DNSName: !Ref DomainS3Bucket
-      HostedZoneId: Z05331763E8JY263AVOS6
+      HostedZoneId: Z3AQBSTGFYJSTF
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
@@ -49,7 +49,7 @@ Resources:
     Type: A
     AliasTarget:
       DNSName: !Ref DomainS3Bucket
-      HostedZoneId: Z05331763E8JY263AVOS6
+      HostedZoneId: Z3AQBSTGFYJSTF
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
    Properties:
