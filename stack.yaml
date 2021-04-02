@@ -71,7 +71,7 @@ Resources:
        SslSupportMethod: sni-only
      DefaultCacheBehavior:
        TargetOriginId: Z05331763E8JY263AVOS6
-       ViewerProtocolPolicy: allow-all
+       ViewerProtocolPolicy: redirect-to-https
        CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
   MyCertificate:
    Type: AWS::CertificateManager::Certificate
