@@ -31,7 +31,7 @@ Resources:
     Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !GetAtt DomainS3Bucket.DomainName
+      DNSName: !GetAtt DomainS3Bucket.RegionalDomainName
       HostedZoneId: Z3AQBSTGFYJSTF
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
@@ -48,7 +48,7 @@ Resources:
     Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !GetAtt DomainS3Bucket.DomainName
+      DNSName: !GetAtt DomainS3Bucket.RegionalDomainName
       HostedZoneId: Z3AQBSTGFYJSTF
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
