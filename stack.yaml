@@ -67,7 +67,6 @@ Resources:
      PriceClass: PriceClass_All
      ViewerCertificate:
        AcmCertificateArn: !Ref MyCertificate
-       CloudFrontDefaultCertificate: false
        MinimumProtocolVersion: TLSv1
        SslSupportMethod: sni-only
      DefaultCacheBehavior:
