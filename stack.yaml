@@ -31,7 +31,7 @@ Resources:
     Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
+      DNSName: !Sub "s3-website-us-east-1.amazonaws.com"
       HostedZoneId: Z2FDTNDATAQYW2
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
@@ -48,7 +48,7 @@ Resources:
     Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !Sub "s3-website-${AWS::Region}.amazonaws.com"
+      DNSName: !Sub "s3-website-us-east-1.amazonaws.com"
       HostedZoneId: Z2FDTNDATAQYW2
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
