@@ -27,7 +27,7 @@ Resources:
   DomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
-    HostedZoneId: Z07417611W83XRU4YCJKQ
+    HostedZoneId: Z07421822M29NVTBZFRPR
     Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
@@ -44,7 +44,7 @@ Resources:
   SubDomainRecordSet:
    Type: AWS::Route53::RecordSet
    Properties:
-    HostedZoneId: Z07417611W83XRU4YCJKQ
+    HostedZoneId: Z07421822M29NVTBZFRPR
     Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
@@ -59,7 +59,7 @@ Resources:
        - !Sub "www.${DomainS3Bucket}"
      Origins:
        - DomainName: !Ref DomainS3Bucket
-         Id: Z07417611W83XRU4YCJKQ
+         Id: Z07421822M29NVTBZFRPR
          CustomOriginConfig:
            OriginProtocolPolicy: match-viewer
      Enabled: 'true'
@@ -70,7 +70,7 @@ Resources:
        MinimumProtocolVersion: TLSv1
        SslSupportMethod: sni-only
      DefaultCacheBehavior:
-       TargetOriginId: Z07417611W83XRU4YCJKQ
+       TargetOriginId: Z07421822M29NVTBZFRPR
        ViewerProtocolPolicy: allow-all
        CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad
   MyCertificate:
@@ -79,9 +79,9 @@ Resources:
      DomainName: !Ref DomainS3Bucket
      DomainValidationOptions:
       - DomainName: !Ref DomainS3Bucket
-        HostedZoneId: Z07417611W83XRU4YCJKQ
+        HostedZoneId: Z07421822M29NVTBZFRPR
       - DomainName: !Ref SubDomainS3Bucket
-        HostedZoneId: Z07417611W83XRU4YCJKQ
+        HostedZoneId: Z07421822M29NVTBZFRPR
      ValidationMethod: DNS
      SubjectAlternativeNames: 
       - !Ref SubDomainS3Bucket
