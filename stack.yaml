@@ -48,8 +48,8 @@ Resources:
     Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !GetAtt CloudDistribution.DomainName
-      HostedZoneId: Z2FDTNDATAQYW2
+      DNSName: !GetAtt DomainS3Bucket.WebsiteURL
+      HostedZoneId: Z3AQBSTGFYJSTF
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
    Properties:
