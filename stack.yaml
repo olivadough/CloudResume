@@ -31,7 +31,7 @@ Resources:
     Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !GetAtt CloudDistribution.DomainName
+      !Sub "s3-website-${AWS::Region}.amazonaws.com"
       HostedZoneId: Z2FDTNDATAQYW2
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
@@ -48,7 +48,7 @@ Resources:
     Name: !Ref SubDomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !GetAtt CloudDistribution.DomainName
+      !Sub "s3-website-${AWS::Region}.amazonaws.com"
       HostedZoneId: Z2FDTNDATAQYW2
   CloudDistribution:
    Type: AWS::CloudFront::Distribution
@@ -86,3 +86,5 @@ Resources:
      SubjectAlternativeNames:
       - !Ref SubDomainS3Bucket
      CertificateTransparencyLoggingPreference: DISABLED  
+
+     
