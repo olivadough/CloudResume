@@ -31,7 +31,7 @@ Resources:
     Name: !Ref DomainS3Bucket
     Type: A
     AliasTarget:
-      DNSName: !Ref DomainS3Bucket
+      DNSName: !GetAtt WebsiteURL
       HostedZoneId: Z3AQBSTGFYJSTF
   SubDomainS3Bucket:
     Type: 'AWS::S3::Bucket'
