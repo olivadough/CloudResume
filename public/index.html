@@ -27,18 +27,16 @@
         <div class="details">
           <header>
             <h3>AWS Cloud Project</h3>
-            <span class="place">Created a resume project hosted on a AWS cloud platform</span>
+            <span class="place">Hosted a resume on an S3 static website powered by AWS</span>
           </header>
           <div>
             <ul>
-              <li>Incorporated a Ci/Cd pipeline through Github Actions to continuously automate and deploy the project, while using Github as the repository for my code</li>
-              <li>Applied ifC procedures through Cloudformation and used the security in IAM to mitigate the possibilities of data breach</li>
-              <li>Set up a Static S3 Bucket to hold static files for the application including html files</li>
-              <li>Procured a hostname and set up a DNS through route 53 that would link users to my website and configured the bucket policies to allow users access.</li>
-              <li>Set up a CDN through CloudFront in order to cache the static files in order to accelerate the user's connection with the website.</li>
-              <li>Set up a certificateManager that would add another layer of security through https.</li>
-              <li>Created a Lambda that adds to the DynamoDb database with every visitor to the website</li>
-              <li>Created a javascript that invokes an Api call that would return the visitor count for display along with the resume </li>
+              <li>Wrote HTML, with embedded JavaScript, and CSS to display resume with the latest visitor count</li>
+              <li>Implemented a Lambda Function with a public API Gateway endpoint that maintains visitor count in DynamoDB</li>
+              <li>Procured a domain name and created DNS records in Route 53 </li>
+              <li>Configured HTTPS through CloudFront and AWS Certificate Manager</li>
+              <li>Automatically deployed changes to the back-end and front-end stacks using a CI/CD pipeline built on Github Actions</li>
+              <li>Maintained AWS resources through infrastructure-as-code with CloudFormation</li>
           </ul> 
           </div>
         </div>
@@ -52,14 +50,12 @@
         <div class="details">
           <header>
             <h3>Community Manager</h3>
-            <span class="place">Built a communications platform in the form of a community forum:</span>
+            <span class="place">Built a forum to host communication for neighborhood residents</span>
           </header>
           <div>
             <ul>
-              <li>Allowed users to sign-up, comment, post, delete, and live chat through JavaScript
-              <li>Stored comments, posts, and user identifications through MySql</li>
-              <li>Relayed information to front-end to back-end through Express</li>
-              <li>Front-end aesthetics were built with Bootstrap and CSS</li>
+              <li>Stored user identifications and profiles, posts, and comments in MySQL</li>
+              <li>Designed the user pages with Bootstrap and CSS</li>
             </ul>
           </div>
         </div>
@@ -72,12 +68,13 @@
         <div class="details">
           <header>
             <h3>Food Optimization Project</h3>
-            <span class="place">Built a food service matching clientele with restaurants to utilize food waste by selling excess food stock at a discounted price</span>
+            <span class="place">Created a marketplace to offer direct transactions between restaurants and consumers </span>
           </header>
           <div>
             <ul>
               <ul>
-                <li>Used React cookie routers and NPM packages to link the front-end and back-end to improve user experience</li>
+                <li>Used React framework to display restaurant inventory on a single page </li>
+                <li>Integrated with MongoDB to store and update menu items available for purchase</li>
             </ul> 
           </div>
         </div>
@@ -100,7 +97,7 @@
           </header>
           <div>
             <ul>
-              <li>Route53, DynamoDb, Api Gateway, Lambda, s3, SAM</li>
+              <li>Lambda, S3, DynamoDB, API Gateway, Route53, CloudFront, CloudFormation, SAM</li>
             </ul>
           </div>
         </div>
@@ -113,11 +110,28 @@
         </div>
         <div class="details">
           <header>
-            <h3>General </h3>
+            <h3>Back-end</h3>
           </header>
           <div>
             <ul>
-              <li>Javascript, Node.js, CSS, HTML, MongoDb, MySql, Npm, Sql, Bootstrap, JQuery, JSON, Api, Ajax, Express, MySql, Sequelize, Mongoose, Mern Stack, MVC, Heroku, React, https, ifC, boto3</li>
+              <li>MongoDB, SQL, JSON, API, Ajax, Express, Heroku, C#, infrastructure-as-code, HTTPS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span></span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Front-end</h3>
+          </header>
+          <div>
+            <ul>
+              <li>JavaScript, React, Node.js, HTML, CSS, Bootstrap, JQuery</li>
             </ul>
           </div>
         </div>
@@ -152,7 +166,7 @@
         <div class="details">
           <header>
             <h3>Coding Bootcamp</h3>
-            <span class="place">University of California Irvine, Irvine Division of Continuing Education    </span>
+            <span class="place">University of California, Irvine, Division of Continuing Education </span>
             <span class="location">Irvine, California</span>
           </header>
         </div>
@@ -169,7 +183,6 @@
             <span class="place">California State University, Long Beach</span>
             <span class="location">Long Beach, California</span>
           </header>
-          <div>President’s and Dean’s Honor List</div>
         </div>
       </section>
     </section>
@@ -187,13 +200,13 @@
         <div class="details">
           <header>
             <h3>Coding Assistant Position</h3>
-            <span class="place">UCI</span>
+            <span class="place">Trilogy Education Services at University of California, Irvine </span>
             <span class="location">Irvine, California</span>
           </header>
           <div>
             <ul>
-              <li>Tutored classes of 30-90 students in learning existing technologies and building web applications, by breaking down topics into digestible concepts</li>
-              <li>Taught students how to incorporate technologies into their projects, i.e. understanding the concept of Mern Stack and OOP, through live demos</li>
+              <li>Served as a teacher’s assistant for 3 classes focused on building web applications</li>
+              <li>Tutored 70+ students on how to incorporate technologies, including React and Node.js, into their projects</li>
             </ul>
           </div>
         </div>
@@ -209,6 +222,20 @@
             <h3>Personal Trainer</h3>
             <span class="place">Freelance Personal Trainer</span>
             <span class="location">Irvine, California</span>
+          </header>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>2015</span><span>2016</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Marketing Assistant</h3>
+            <span class="place">ANQI</span>
+            <span class="location">Costa Mesa, California</span>
           </header>
         </div>
       </section>
