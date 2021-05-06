@@ -1,0 +1,88 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  DomainS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: cloud-resume-challenge-oliver.com
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        ErrorDocument: 404.html
+        IndexDocument: index.html
+      PublicAccessBlockConfiguration:
+        BlockPublicPolicy: FALSE
+  DomainS3HostingBucketPolicy:
+   Type: AWS::S3::BucketPolicy
+   Properties:
+      Bucket: !Ref DomainS3Bucket
+      PolicyDocument:
+        Id: MyPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: "*"
+            Action: "s3:GetObject"
+            Resource: !Sub "arn:aws:s3:::${DomainS3Bucket}/*"
+  DomainRecordSet:
+   Type: AWS::Route53::RecordSet
+   Properties:
+    HostedZoneId: Z05331763E8JY263AVOS6
+    Name: !Ref DomainS3Bucket
+    Type: A
+    AliasTarget:
+      DNSName: !GetAtt CloudDistribution.DomainName
+      HostedZoneId: Z2FDTNDATAQYW2
+  SubDomainS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub "www.${DomainS3Bucket}"
+      WebsiteConfiguration:
+        RedirectAllRequestsTo:
+          HostName: !Ref DomainS3Bucket
+          Protocol: http
+  SubDomainRecordSet:
+   Type: AWS::Route53::RecordSet
+   Properties:
+    HostedZoneId: Z05331763E8JY263AVOS6
+    Name: !Ref SubDomainS3Bucket
+    Type: A
+    AliasTarget:
+      DNSName: !GetAtt CloudDistribution.DomainNameName
+      HostedZoneId: Z2FDTNDATAQYW2
+  CloudDistribution:
+   Type: AWS::CloudFront::Distribution
+   Properties:
+    DistributionConfig:
+     Aliases:
+       - !Ref DomainS3Bucket
+       - !Sub "www.${DomainS3Bucket}"
+     Origins:
+       - DomainName: !Ref DomainS3Bucket
+         Id: Z05331763E8JY263AVOS6
+         CustomOriginConfig:
+           OriginProtocolPolicy: match-viewer
+     Enabled: 'true'
+     DefaultRootObject: index.html
+     PriceClass: PriceClass_All
+     ViewerCertificate:
+       AcmCertificateArn: !Ref MyCertificate
+       MinimumProtocolVersion: TLSv1
+       SslSupportMethod: sni-only
+     DefaultCacheBehavior:
+       TargetOriginId: Z05331763E8JY263AVOS6
+       ViewerProtocolPolicy: allow-all
+       CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+  MyCertificate:
+   Type: AWS::CertificateManager::Certificate
+   Properties:
+     DomainName: !Ref DomainS3Bucket
+     DomainValidationOptions:
+      - DomainName: !Ref DomainS3Bucket
+        HostedZoneId: Z05331763E8JY263AVOS6
+      - DomainName: !Ref SubDomainS3Bucket
+        HostedZoneId: Z05331763E8JY263AVOS6
+     ValidationMethod: DNS
+     SubjectAlternativeNames:
+      - !Ref SubDomainS3Bucket
+     CertificateTransparencyLoggingPreference: DISABLED  
